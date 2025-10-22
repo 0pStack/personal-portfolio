@@ -42,6 +42,13 @@ nav .links a {
   transition: color 0.3s;
 }
 
+nav .toggle_btn{
+  color: #fff;
+  font-size: 1.5rem;
+  cursor: pointer;
+  display: none; /*wtf*/
+}
+
 nav .links a:hover {
   color: orange;
 }
