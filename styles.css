@@ -26,6 +26,7 @@ body {
   background-position: 50% 22%;
   background-attachment: fixed;
   background-size: cover;
+  overflow-y: hidden;
 
   /* gentle pop so the tree is a bit brighter/sunnier */
   filter: saturate(1.02) brightness(1.06) contrast(1.02);
@@ -70,7 +71,7 @@ nav {
   left: 50%;
   transform: translateX(-50%);
   top: 2rem;
-  width: min(1200px, 80%);
+  width: min(1200px, 90vw);
   border-radius: 16px;
   box-shadow: 0 6px 6px rgba(0, 0, 0, 0.5);
   display: flex;
