@@ -260,25 +260,25 @@ section#hero {
   }
 }
 
-/* --------------- RESPONSIVE --------------- */
-@media (max-width: 980px) {
-  nav {
-    width: min(1200px, 90%);
-  }
-}
+/* ========== RESPONSIVE ========== */
 
 @media (max-width: 868px) {
   .navbar .links,
-  .navbar .action-btn {
-    display: none;
-  }
+  .navbar .action-btn { display: none; }
+
   .navbar .toggle-btn {
     display: inline-flex;
     align-items: center;
     justify-content: center;
   }
+
+  /* When the mobile menu opens, shift the hero down */
+  header:has(.dropdown-menu.open) + main #hero {
+    transform: translateY(var(--menu-shift));
+  }
 }
 
+/* Compact phones ≤ 576px: dropdown spans safely */
 @media (max-width: 576px) {
   .dropdown-menu {
     left: 2rem;
@@ -287,19 +287,12 @@ section#hero {
   }
 }
 
+/* Desktop ≥ 869px: ensure mobile menu can’t linger or capture clicks */
 @media (min-width: 869px) {
   #mobile-menu {
     display: none !important;
     max-height: 0 !important;
     opacity: 0 !important;
     pointer-events: none !important;
-  }
-}
-
-/* only do this on mobile sizes */
-@media (max-width: 868px) {
-  /* When header contains an open dropdown, shift the hero down */
-  header:has(.dropdown-menu.open) + main #hero {
-    transform: translateY(var(--menu-shift));
   }
 }
