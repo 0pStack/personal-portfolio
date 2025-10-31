@@ -1,18 +1,24 @@
-:root{
-  --text-strong:#F5F3E7;
-  --text-soft:#E1DBC7;
-  --accent:#FFB300;
-  --accent-2:#FFD34D;
-  --scrim:rgba(0,0,0,.58);
+:root {
+  --text-strong: #f5f3e7;
+  --text-soft: #e1dbc7;
+  --accent: #ffb300;
+  --accent-2: #ffd34d;
+  --scrim: rgba(0, 0, 0, 0.58);
+  /* --- Push hero down when the mobile dropdown is open --- */
+  --menu-shift: 320px;
 }
-
 
 /* Imports */
 @import url("https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap");
 
 /* Base */
-* { box-sizing: border-box; }
-html, body { height: 100%; }
+* {
+  box-sizing: border-box;
+}
+html,
+body {
+  height: 100%;
+}
 body {
   margin: 0;
   background-image: url("https://4kwallpapers.com/images/walls/thumbs_3t/22695.jpg");
@@ -31,33 +37,42 @@ body {
 
 /* Visually hidden text (for a11y helpers) */
 .sr-only {
-  position: absolute; width: 1px; height: 1px;
-  padding: 0; margin: -1px; overflow: hidden; clip: rect(0,0,0,0);
-  white-space: nowrap; border: 0;
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
 }
 
 /* ---------------- NAV ---------------- */
-header { position: relative; padding: 0 2rem; }
+header {
+  position: relative;
+  padding: 0 2rem;
+}
 
 nav {
   color: var(--text-strong);
-  background-color: rgba(255,255,255,0.08);
+  background-color: rgba(255, 255, 255, 0.08);
   background-image: linear-gradient(
     120deg,
-    rgba(0,0,0,0.2),
-    rgba(255,255,255,0.06),
-    rgba(0,0,0,0.2)
+    rgba(0, 0, 0, 0.2),
+    rgba(255, 255, 255, 0.06),
+    rgba(0, 0, 0, 0.2)
   );
   backdrop-filter: blur(4px);
   -webkit-backdrop-filter: blur(4px);
-  padding: .75rem 1rem;
+  padding: 0.75rem 1rem;
   position: fixed;
   left: 50%;
   transform: translateX(-50%);
   top: 2rem;
   width: min(1200px, 80%);
   border-radius: 16px;
-  box-shadow: 0 6px 6px rgba(0,0,0,0.5);
+  box-shadow: 0 6px 6px rgba(0, 0, 0, 0.5);
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -78,14 +93,18 @@ nav {
   padding: 0;
 }
 
-.navbar .links li { list-style: none; }
+.navbar .links li {
+  list-style: none;
+}
 
 .navbar a {
   text-decoration: none;
   color: var(--text-strong);
   font-size: 1rem;
 }
-.navbar a:hover { color: var(--accent); }
+.navbar a:hover {
+  color: var(--accent);
+}
 
 .navbar .toggle-btn {
   background: transparent;
@@ -106,25 +125,30 @@ nav {
   font-size: 0.9rem;
   font-weight: 800;
   cursor: pointer;
-  transition: transform .15s ease, background-color .2s ease;
+  transition: transform 0.15s ease, background-color 0.2s ease;
   text-decoration: none;
 }
-.action-btn:hover { transform: translateY(-1px); background: var(--accent-2); }
-.action-btn:active { transform: translateY(0); }
+.action-btn:hover {
+  transform: translateY(-1px);
+  background: var(--accent-2);
+}
+.action-btn:active {
+  transform: translateY(0);
+}
 
 /* --------------- DROPDOWN (mobile) --------------- */
-.dropdown-menu{
+.dropdown-menu {
   position: absolute;
   right: 3rem;
-  top: 100px;                 /* sits under the fixed nav */
+  top: 100px; /* sits under the fixed nav */
   width: 220px;
 
-  background-color: rgba(255,255,255,0.10);
+  background-color: rgba(255, 255, 255, 0.1);
   background-image: linear-gradient(
     120deg,
-    rgba(0,0,0,0.10),
-    rgba(255,255,255,0.10),
-    rgba(0,0,0,0.10)
+    rgba(0, 0, 0, 0.1),
+    rgba(255, 255, 255, 0.1),
+    rgba(0, 0, 0, 0.1)
   );
   backdrop-filter: blur(4px);
   -webkit-backdrop-filter: blur(4px);
@@ -135,13 +159,12 @@ nav {
   max-height: 0;
   opacity: 0;
   pointer-events: none;
-  transition:
-    max-height .25s cubic-bezier(0.175, 0.885, 0.32, 1.275),
-    opacity .2s ease;
+  transition: max-height 0.25s cubic-bezier(0.175, 0.885, 0.32, 1.275),
+    opacity 0.2s ease;
   z-index: 19;
 }
 
-.dropdown-menu.open{
+.dropdown-menu.open {
   max-height: 400px; /* big enough for content */
   opacity: 1;
   pointer-events: auto;
@@ -149,11 +172,11 @@ nav {
 
 .dropdown-menu ul {
   margin: 0;
-  padding: .25rem;
+  padding: 0.25rem;
   list-style: none;
 }
 
-.dropdown-menu li{
+.dropdown-menu li {
   padding: 0.6rem 0.75rem;
   display: flex;
   align-items: center;
@@ -165,22 +188,26 @@ nav {
   text-decoration: none;
   font-size: 1rem;
 }
-.dropdown-menu a:hover { color: var(--accent); }
+.dropdown-menu a:hover {
+  color: var(--accent);
+}
 
-.dropdown-menu .action-btn{
+.dropdown-menu .action-btn {
   width: 100%;
   display: flex;
   justify-content: center;
-  margin-top: .25rem;
+  margin-top: 0.25rem;
 }
 
 /* --------------- HERO --------------- */
-main { 
+main {
   /* make sure content starts below the fixed nav */
   padding-top: calc(2rem + 72px);
 }
 
-section#hero{
+main #hero { transition: transform .25s ease; }
+
+section#hero {
   min-height: 100svh;
   display: flex;
   flex-direction: column;
@@ -188,47 +215,55 @@ section#hero{
   justify-content: center;
   text-align: center;
   color: var(--text-strong);
-  text-shadow: 0 2px 12px rgba(0,0,0,.6);
+  text-shadow: 0 2px 12px rgba(0, 0, 0, 0.6);
   padding: 0 1rem 6rem;
 }
 
-.hero-card{
-  background: rgba(0,0,0,.24);
+.hero-card {
+  background: rgba(0, 0, 0, 0.24);
   backdrop-filter: blur(6px);
   -webkit-backdrop-filter: blur(6px);
-  border: 1px solid rgba(255,255,255,.14);
+  border: 1px solid rgba(255, 255, 255, 0.14);
   border-radius: 20px;
-  padding: clamp(1rem,3vw,2rem) clamp(1.25rem,4vw,2.5rem);
-  box-shadow: 0 10px 30px rgba(0,0,0,.25);
+  padding: clamp(1rem, 3vw, 2rem) clamp(1.25rem, 4vw, 2.5rem);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25);
   max-width: min(800px, 92vw);
-  animation: fadeUp .7s ease both;
+  animation: fadeUp 0.7s ease both;
 }
 
-#hero h1{
+#hero h1 {
   font-size: clamp(2.2rem, 6vw, 4rem);
   line-height: 1.1;
-  margin: 0 0 .5rem;
+  margin: 0 0 0.5rem;
 }
 
-#hero p{
+#hero p {
   color: var(--text-soft);
   max-width: 65ch;
   margin: 0 auto;
   line-height: 1.65;
   font-weight: 400;
-  letter-spacing: .1px;
+  letter-spacing: 0.1px;
   font-size: clamp(1rem, 2.2vw, 1.25rem);
 }
 
 /* Subtle intro animation */
-@keyframes fadeUp{
-  from{opacity:0; transform:translateY(12px)}
-  to{opacity:1; transform:translateY(0)}
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 /* --------------- RESPONSIVE --------------- */
 @media (max-width: 980px) {
-  nav { width: min(1200px, 90%); }
+  nav {
+    width: min(1200px, 90%);
+  }
 }
 
 @media (max-width: 868px) {
@@ -244,7 +279,11 @@ section#hero{
 }
 
 @media (max-width: 576px) {
-  .dropdown-menu { left: 2rem; right: 2rem; width: auto; }
+  .dropdown-menu {
+    left: 2rem;
+    right: 2rem;
+    width: auto;
+  }
 }
 
 @media (min-width: 869px) {
@@ -253,5 +292,13 @@ section#hero{
     max-height: 0 !important;
     opacity: 0 !important;
     pointer-events: none !important;
+  }
+}
+
+/* only do this on mobile sizes */
+@media (max-width: 868px) {
+  /* When header contains an open dropdown, shift the hero down */
+  header:has(.dropdown-menu.open) + main #hero {
+    transform: translateY(var(--menu-shift));
   }
 }

@@ -22,7 +22,9 @@
     <header>
       <div class="navbar">
         <nav aria-label="Primary">
-          <div class="logo"><a href="#" aria-label="0pFlow home">0pFlow</a></div>
+          <div class="logo">
+            <a href="#" aria-label="0pFlow home">0pFlow</a>
+          </div>
 
           <ul class="links">
             <li><a href="#">Home</a></li>
@@ -34,7 +36,12 @@
 
           <a href="#" class="action-btn">Let's talk</a>
 
-          <button class="toggle-btn" type="button" aria-expanded="false" aria-controls="mobile-menu">
+          <button
+            class="toggle-btn"
+            type="button"
+            aria-expanded="false"
+            aria-controls="mobile-menu"
+          >
             <i class="fa-solid fa-bars" aria-hidden="true"></i>
             <span class="sr-only">Open menu</span>
           </button>
@@ -59,68 +66,73 @@
         <div class="hero-card">
           <h1>Welcome</h1>
           <p>
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Debitis, libero,
-            voluptatem ipsam facere placeat dolorum recusandae hic doloremque, in explicabo
-            eaque? Delectus quidem dolorem vel esse iste rerum itaque doloribus!
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Debitis,
+            libero, voluptatem ipsam facere placeat dolorum recusandae hic
+            doloremque, in explicabo eaque? Delectus quidem dolorem vel esse
+            iste rerum itaque doloribus!
           </p>
         </div>
       </section>
     </main>
 
     <script>
-      const toggleBtn = document.querySelector('.toggle-btn');
-      const toggleBtnIcon = document.querySelector('.toggle-btn i');
-      const dropdownMenu = document.querySelector('#mobile-menu');
+      const toggleBtn = document.querySelector(".toggle-btn");
+      const toggleBtnIcon = document.querySelector(".toggle-btn i");
+      const dropdownMenu = document.querySelector("#mobile-menu");
 
       function closeMenu() {
-        dropdownMenu.classList.remove('open');
-        dropdownMenu.setAttribute('aria-hidden', 'true');
-        toggleBtn.setAttribute('aria-expanded', 'false');
-        toggleBtnIcon.className = 'fa-solid fa-bars';
+        dropdownMenu.classList.remove("open");
+        dropdownMenu.setAttribute("aria-hidden", "true");
+        toggleBtn.setAttribute("aria-expanded", "false");
+        toggleBtnIcon.className = "fa-solid fa-bars";
       }
 
       function openMenu() {
-        dropdownMenu.classList.add('open');
-        dropdownMenu.setAttribute('aria-hidden', 'false');
-        toggleBtn.setAttribute('aria-expanded', 'true');
-        toggleBtnIcon.className = 'fa-solid fa-xmark';
+        dropdownMenu.classList.add("open");
+        dropdownMenu.setAttribute("aria-hidden", "false");
+        toggleBtn.setAttribute("aria-expanded", "true");
+        toggleBtnIcon.className = "fa-solid fa-xmark";
       }
 
-      toggleBtn.addEventListener('click', () => {
-        const isOpen = dropdownMenu.classList.contains('open');
+      toggleBtn.addEventListener("click", () => {
+        const isOpen = dropdownMenu.classList.contains("open");
         isOpen ? closeMenu() : openMenu();
       });
 
       // Close on link click
-      dropdownMenu.querySelectorAll('a').forEach(a => {
-        a.addEventListener('click', closeMenu);
+      dropdownMenu.querySelectorAll("a").forEach((a) => {
+        a.addEventListener("click", closeMenu);
       });
 
       // Close on outside click
-      document.addEventListener('click', (e) => {
-        const withinNav = e.target.closest('nav');
-        const withinMenu = e.target.closest('#mobile-menu');
-        if (!withinNav && !withinMenu && dropdownMenu.classList.contains('open')) {
+      document.addEventListener("click", (e) => {
+        const withinNav = e.target.closest("nav");
+        const withinMenu = e.target.closest("#mobile-menu");
+        if (
+          !withinNav &&
+          !withinMenu &&
+          dropdownMenu.classList.contains("open")
+        ) {
           closeMenu();
         }
       });
 
       // Close on Escape
-      document.addEventListener('keydown', (e) => {
-        if (e.key === 'Escape' && dropdownMenu.classList.contains('open')) {
+      document.addEventListener("keydown", (e) => {
+        if (e.key === "Escape" && dropdownMenu.classList.contains("open")) {
           closeMenu();
         }
       });
 
       // Close menu when switching to desktop width
-  function handleResize() {
-    if (window.innerWidth > 868) {
-      closeMenu(); // uses the closeMenu() you already have
-    }
-  }
-  window.addEventListener('resize', handleResize);
-  // also run once on load (in case page opens wide with menu persisted)
-  handleResize();
+      function handleResize() {
+        if (window.innerWidth > 868) {
+          closeMenu(); // uses the closeMenu() you already have
+        }
+      }
+      window.addEventListener("resize", handleResize);
+      // also run once on load (in case page opens wide with menu persisted)
+      handleResize();
     </script>
   </body>
 </html>
