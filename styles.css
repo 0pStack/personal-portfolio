@@ -26,7 +26,7 @@ body {
   background-position: 50% 22%;
   background-attachment: fixed;
   background-size: cover;
-  overflow-y: hidden;
+  
 
   /* gentle pop so the tree is a bit brighter/sunnier */
   filter: saturate(1.02) brightness(1.06) contrast(1.02);
