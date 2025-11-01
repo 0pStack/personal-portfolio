@@ -216,7 +216,7 @@ main {
 main #hero { transition: transform .25s ease; }
 
 section#hero {
-  min-height: 100svh;
+  min-height: 85svh;
   display: flex;
   flex-direction: column;
   align-items: center;
