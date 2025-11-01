@@ -15,6 +15,8 @@
 * {
   box-sizing: border-box;
 }
+
+
 html,
 body {
   height: 100%;
@@ -49,7 +51,7 @@ body {
   border: 0;
 }
 
-/* ---------------- NAV ---------------- */
+/* ===================== NAV ======================== */
 header {
   position: relative;
   padding: 0 2rem;
@@ -137,7 +139,9 @@ nav {
   transform: translateY(0);
 }
 
-/* --------------- DROPDOWN (mobile) --------------- */
+
+/* ==================== DROPDOWN (mobile) ==================== */
+/* ==================== DROPDOWN (mobile) ==================== */
 .dropdown-menu {
   position: absolute;
   right: 3rem;
@@ -200,8 +204,11 @@ nav {
   justify-content: center;
   margin-top: 0.25rem;
 }
+/*=========================NAV END==============================*/
 
-/* --------------- HERO --------------- */
+
+
+/* =========================HERO=============================== */
 main {
   /* make sure content starts below the fixed nav */
   padding-top: calc(2rem + 72px);
@@ -249,6 +256,8 @@ section#hero {
   font-size: clamp(1rem, 2.2vw, 1.25rem);
 }
 
+/* =========================HERO END=============================== */
+
 /* Subtle intro animation */
 @keyframes fadeUp {
   from {
@@ -261,7 +270,7 @@ section#hero {
   }
 }
 
-/* ========== RESPONSIVE ========== */
+/* ========================== RESPONSIVE ========================== */
 
 @media (max-width: 868px) {
   .navbar .links,
