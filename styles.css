@@ -5,7 +5,7 @@
   --accent-2: #ffd34d;
   --scrim: rgba(0, 0, 0, 0.58);
   /* --- Push hero down when the mobile dropdown is open --- */
-  --menu-shift: 128px;
+  --menu-shift: 230px;
 }
 
 /* Imports */
@@ -22,14 +22,9 @@ body {
 }
 body {
   margin: 0;
-  background-image: url("https://4kwallpapers.com/images/walls/thumbs_3t/22695.jpg");
-  background-repeat: no-repeat;
-  background-position: 50% 22%;
-  background-size: cover;
 
   /* gentle pop so the tree is a bit brighter/sunnier */
   filter: saturate(1.02) brightness(1.06) contrast(1.02);
-
   font-family: "Playfair Display", serif;
   font-weight: 600;
   color: var(--text-strong);
@@ -212,6 +207,10 @@ nav {
 main {
   /* make sure content starts below the fixed nav */
   padding-top: calc(2rem + 72px);
+  background-image: url("https://4kwallpapers.com/images/walls/thumbs_3t/22695.jpg");
+  background-repeat: no-repeat;
+  background-position: 50% 22%;
+  background-size: cover;
 }
 
 main #hero {
@@ -240,6 +239,7 @@ section#hero {
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25);
   max-width: min(800px, 92vw);
   animation: fadeUp 0.7s ease both;
+  margin-bottom: 3rem;
 }
 
 #hero h1 {
@@ -272,6 +272,22 @@ section#hero {
   }
 }
 
+
+/*============================ABOUT============================*/
+section#about {
+  position: relative;
+  top: 0;
+  margin-top: 0;
+  padding: clamp(2rem, 5vw, 4rem) 1rem;
+  background: rgba(0,0,0,0.18); /* optional: semi-transparent bg to separate it */
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+  z-index: 1;
+}
+
+.about-cv li{
+  list-style-type: none;
+}
 /* ========================== RESPONSIVE ========================== */
 
 @media (max-width: 868px) {
