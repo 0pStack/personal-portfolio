@@ -16,7 +16,6 @@
   box-sizing: border-box;
 }
 
-
 html,
 body {
   height: 100%;
@@ -27,7 +26,6 @@ body {
   background-repeat: no-repeat;
   background-position: 50% 22%;
   background-size: cover;
-  
 
   /* gentle pop so the tree is a bit brighter/sunnier */
   filter: saturate(1.02) brightness(1.06) contrast(1.02);
@@ -138,7 +136,6 @@ nav {
   transform: translateY(0);
 }
 
-
 /* ==================== DROPDOWN (mobile) ==================== */
 /* ==================== DROPDOWN (mobile) ==================== */
 .dropdown-menu {
@@ -147,7 +144,6 @@ nav {
   top: 100px; /* sits under the fixed nav */
   width: 220px;
 
-  
   background: rgba(0, 0, 0, 0.48);
   background-image: linear-gradient(
     120deg,
@@ -168,9 +164,13 @@ nav {
     opacity 0.2s ease;
   z-index: 19;
 }
-.dropdown-menu .action-btn { transform: none; }
+.dropdown-menu .action-btn {
+  transform: none;
+}
 .dropdown-menu .action-btn:hover,
-.dropdown-menu .action-btn:active { transform: none; }
+.dropdown-menu .action-btn:active {
+  transform: none;
+}
 
 .dropdown-menu.open {
   max-height: 400px; /* big enough for content */
@@ -208,15 +208,15 @@ nav {
 }
 /*=========================NAV END==============================*/
 
-
-
 /* =========================HERO=============================== */
 main {
   /* make sure content starts below the fixed nav */
   padding-top: calc(2rem + 72px);
 }
 
-main #hero { transition: transform .25s ease; }
+main #hero {
+  transition: transform 0.25s ease;
+}
 
 section#hero {
   min-height: 85svh;
@@ -276,7 +276,9 @@ section#hero {
 
 @media (max-width: 868px) {
   .navbar .links,
-  .navbar .action-btn { display: none; }
+  .navbar .action-btn {
+    display: none;
+  }
 
   .navbar .toggle-btn {
     display: inline-flex;
