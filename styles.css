@@ -5,7 +5,7 @@
   --accent-2: #ffd34d;
   --scrim: rgba(0, 0, 0, 0.58);
   /* --- Push hero down when the mobile dropdown is open --- */
-  --menu-shift: 320px;
+  --menu-shift: 128px;
 }
 
 /* Imports */
@@ -60,9 +60,9 @@ nav {
   background-color: rgba(255, 255, 255, 0.08);
   background-image: linear-gradient(
     120deg,
-    rgba(0, 0, 0, 0.2),
+    rgba(0, 0, 0, 0.48),
     rgba(255, 255, 255, 0.06),
-    rgba(0, 0, 0, 0.2)
+    rgba(0, 0, 0, 0.48)
   );
   backdrop-filter: blur(4px);
   -webkit-backdrop-filter: blur(4px);
@@ -83,7 +83,7 @@ nav {
 .navbar .logo a {
   font-size: 1.5rem;
   font-weight: 800;
-  color: var(--text-strong);
+  color: var(--accent);
   text-decoration: none;
 }
 
@@ -144,7 +144,8 @@ nav {
   top: 100px; /* sits under the fixed nav */
   width: 220px;
 
-  background-color: rgba(255, 255, 255, 0.1);
+  
+  background: rgba(0, 0, 0, 0.48);
   background-image: linear-gradient(
     120deg,
     rgba(0, 0, 0, 0.1),
