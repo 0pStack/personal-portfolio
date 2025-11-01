@@ -168,6 +168,9 @@ nav {
     opacity 0.2s ease;
   z-index: 19;
 }
+.dropdown-menu .action-btn { transform: none; }
+.dropdown-menu .action-btn:hover,
+.dropdown-menu .action-btn:active { transform: none; }
 
 .dropdown-menu.open {
   max-height: 400px; /* big enough for content */
