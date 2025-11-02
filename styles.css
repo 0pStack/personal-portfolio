@@ -429,6 +429,11 @@ section#projects {
   animation: fadeUp 0.7s ease both;
   margin-bottom: 1rem;
 }
+
+.project-card1 img{
+  width: 80%;
+  height: 80%;
+}
 /*=========================== PROJECTS END ============================*/
 /* ========================== RESPONSIVE ========================== */
 
