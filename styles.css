@@ -386,29 +386,6 @@ section#projects {
   text-shadow: 0 2px 12px rgba(0, 0, 0, 0.6);
 }
 
-/* --- added: make inner project-card container flex --- */
-#projects .project-card {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  align-items: stretch;
-  gap: 1.25rem;
-}
-
-/* --- added: keep title/paragraph full width --- */
-#projects .project-card > h4,
-#projects .project-card > p {
-  flex-basis: 100%;
-  margin: 0 0 .75rem;
-}
-
-#projects .project-card1,
-#projects .project-card2,
-#projects .project-card3 {
-  flex: 1 1 300px;            /* grow/shrink, base width ~300px */
-  max-width: 360px;           /* optional cap so they don’t get too wide */
-}
-
 #projects {
   background-image: url("/img/spacecat-wallpaper-1920x1080.jpg");
   background-repeat: no-repeat;
@@ -417,7 +394,31 @@ section#projects {
   background-color: #000; /* fills any letterboxing */
 }
 
-.project-card1, .project-card2, .project-card3{
+/* --- inner project-card container layout --- */
+#projects .project-card {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: stretch;
+  gap: 1.25rem;
+}
+
+/* --- title + intro text span full width --- */
+#projects .project-card > h4,
+#projects .project-card > p {
+  flex-basis: 100%;
+  margin: 0 0 .75rem;
+}
+
+/* --- individual cards layout --- */
+#projects .project-card1,
+#projects .project-card2,
+#projects .project-card3 {
+  flex: 1 1 300px;            /* grow/shrink, base width ~300px */
+  max-width: 360px;           /* optional cap so they don’t get too wide */
+  display: flex;
+  flex-direction: column;
+  gap: .75rem;
   background: rgba(0, 0, 0, 0.24);
   backdrop-filter: blur(6px);
   -webkit-backdrop-filter: blur(6px);
@@ -425,14 +426,62 @@ section#projects {
   border-radius: 20px;
   padding: clamp(1rem, 3vw, 2rem) clamp(1.25rem, 4vw, 2.5rem);
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25);
-  max-width: min(800px, 92vw);
   animation: fadeUp 0.7s ease both;
   margin-bottom: 1rem;
 }
 
-.project-card1 img{
-  width: 80%;
-  height: 80%;
+/* --- image wrapper for consistent aspect ratio --- */
+#projects .project-card1 .thumb,
+#projects .project-card2 .thumb,
+#projects .project-card3 .thumb {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  overflow: hidden;
+  border-radius: 14px;
+}
+
+/* --- image inside cards --- */
+#projects .project-card1 .thumb img,
+#projects .project-card2 .thumb img,
+#projects .project-card3 .thumb img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* --- card text --- */
+#projects .project-card1 h5,
+#projects .project-card2 h5,
+#projects .project-card3 h5 {
+  margin: .25rem 0 0;
+}
+
+#projects .project-card1 p,
+#projects .project-card2 p,
+#projects .project-card3 p {
+  margin: 0;
+  font-size: clamp(.95rem, 2vw, 1.05rem);
+  color: var(--text-soft);
+}
+
+/* --- optional: ensure 3-in-a-row on large screens --- */
+@media (min-width: 1025px) {
+  #projects .project-card1,
+  #projects .project-card2,
+  #projects .project-card3 {
+    flex: 0 1 calc(33.333% - 1.25rem);
+    max-width: none;
+  }
+}
+
+/* --- tweak aspect ratio on small screens --- */
+@media (max-width: 576px) {
+  #projects .project-card1 .thumb,
+  #projects .project-card2 .thumb,
+  #projects .project-card3 .thumb {
+    aspect-ratio: 4 / 3;
+  }
 }
 /*=========================== PROJECTS END ============================*/
 /* ========================== RESPONSIVE ========================== */
@@ -440,8 +489,8 @@ section#projects {
 /* ===================== ≤1024px ===================== */
 @media (max-width: 1024px) {
   main, #projects { background-position: 50% 28%;
-   background-size: contain;         /* zoom-out */
-   background-size: 160%;
+    background-size: contain;         /* zoom-out */
+    background-size: 160%;
     background-position: center top;  /* adjust focal */
     background-repeat: no-repeat;
     background-color: #000; }
@@ -489,8 +538,8 @@ section#projects {
   }
 
   main, #projects { background-position: 50% 34%;
-   background-size: contain;         /* zoom-out */
-   background-size: 250%;
+    background-size: contain;         /* zoom-out */
+    background-size: 250%;
     background-position: center top;  /* adjust focal */
     background-repeat: no-repeat;
     background-color: #000;   }
