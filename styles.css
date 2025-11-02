@@ -26,7 +26,6 @@ body {
   /* gentle pop so the tree is a bit brighter/sunnier */
   filter: saturate(1.02) brightness(1.06) contrast(1.02);
   font-family: "Playfair Display", serif;
-  font-weight: 600;
   color: var(--text-strong);
 }
 
@@ -231,7 +230,7 @@ section#hero {
   padding: 0 1rem 6rem;
 }
 
-.hero-card {
+.hero-card, .project-card {
   background: rgba(0, 0, 0, 0.24);
   backdrop-filter: blur(6px);
   -webkit-backdrop-filter: blur(6px);
@@ -244,13 +243,13 @@ section#hero {
   margin-bottom: 3rem;
 }
 
-#hero h1 {
+#hero h1, #projects h4 {
   font-size: clamp(2.2rem, 6vw, 4rem);
   line-height: 1.1;
   margin: 0 0 0.5rem;
 }
 
-#hero p {
+#hero p, #projects p {
   color: var(--text-soft);
   max-width: 65ch;
   margin: 0 auto;
@@ -369,8 +368,84 @@ ul i{
 .about-cv h3{
   font-size: 2rem;
 }
+/* ========================== ABOUT END ===========================*/
+/*=========================== PROJECTS ============================*/
+
+section#projects {
+  min-height: 85svh;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  align-items: stretch;
+  gap: 1.25rem;
+  padding: 2rem 1rem;
+  text-align: center;
+  color: var(--text-strong);
+  text-shadow: 0 2px 12px rgba(0, 0, 0, 0.6);
+}
+
+/* --- added: make inner project-card container flex --- */
+#projects .project-card {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: stretch;
+  gap: 1.25rem;
+}
+
+/* --- added: keep title/paragraph full width --- */
+#projects .project-card > h4,
+#projects .project-card > p {
+  flex-basis: 100%;
+  margin: 0 0 .75rem;
+}
+
+#projects .project-card1,
+#projects .project-card2,
+#projects .project-card3 {
+  flex: 1 1 300px;            /* grow/shrink, base width ~300px */
+  max-width: 360px;           /* optional cap so they don’t get too wide */
+}
+
+#projects {
+  background-image: url("/img/spacecat-wallpaper-1920x1080.jpg");
+  background-repeat: no-repeat;
+  background-position: center top;
+  background-size: 125%;
+  background-color: #000; /* fills any letterboxing */
+}
+
+.project-card1, .project-card2, .project-card3{
+  background: rgba(0, 0, 0, 0.24);
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  border-radius: 20px;
+  padding: clamp(1rem, 3vw, 2rem) clamp(1.25rem, 4vw, 2.5rem);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25);
+  max-width: min(800px, 92vw);
+  animation: fadeUp 0.7s ease both;
+  margin-bottom: 1rem;
+}
+/*=========================== PROJECTS END ============================*/
 /* ========================== RESPONSIVE ========================== */
 
+/* ===================== ≤1024px ===================== */
+@media (max-width: 1024px) {
+  main, #projects { background-position: 50% 28%;
+   background-size: contain;         /* zoom-out */
+   background-size: 160%;
+    background-position: center top;  /* adjust focal */
+    background-repeat: no-repeat;
+    background-color: #000; }
+    .profile-pic{
+      margin: auto;
+    }
+}
+
+/* ====================== ≤868px ===================== */
 @media (max-width: 868px) {
   .navbar .links,
   .navbar .action-btn {
@@ -389,30 +464,7 @@ ul i{
   }
 }
 
-/* Compact phones ≤ 576px: dropdown spans safely */
-@media (max-width: 576px) {
-  .dropdown-menu {
-    left: 2rem;
-    right: 2rem;
-    width: auto;
-  }
-
-  .about-cv, .about-cv li{
-    text-align: center;
-    margin: auto;
-  }
-}
-
-/* Desktop ≥ 869px: ensure mobile menu can’t linger or capture clicks */
-@media (min-width: 869px) {
-  #mobile-menu {
-    display: none !important;
-    max-height: 0 !important;
-    opacity: 0 !important;
-    pointer-events: none !important;
-  }
-}
-/* === RESPONSIVE (MOBILE STACK) === */
+/* ====================== ≤768px ===================== */
 @media (max-width: 768px) {
   .about-card {
     flex-direction: column;
@@ -430,41 +482,54 @@ ul i{
   section#about{
     margin-top: -2.5rem;
   }
-}
-/**/
-/* Zoom OUT background on smaller devices */
-@media (max-width: 1024px) {
-  main { background-position: 50% 28%;
-   background-size: contain;         /* zoom-out */
-   background-size: 160%;
-    background-position: center top;  /* adjust focal */
-    background-repeat: no-repeat;
-    background-color: #000; }
-    .profile-pic{
-      margin: auto;
-    }
-}
-@media (max-width: 768px) {
-  main { background-position: 50% 34%;
+
+  main, #projects { background-position: 50% 34%;
    background-size: contain;         /* zoom-out */
    background-size: 250%;
     background-position: center top;  /* adjust focal */
     background-repeat: no-repeat;
     background-color: #000;   }
 }
+
+/* ====================== ≤576px ===================== */
+/* Compact phones ≤ 576px: dropdown spans safely */
 @media (max-width: 576px) {
-  main { background-position: 50% 20%;
-   background-size: contain;         /* zoom-out */
-   background-size: 250%;
+  .dropdown-menu {
+    left: 2rem;
+    right: 2rem;
+    width: auto;
+  }
+
+  .about-cv, .about-cv li{
+    text-align: center;
+    margin: auto;
+  }
+
+  main, #projects { background-position: 50% 20%;
+    background-size: contain;         /* zoom-out */
+    background-size: 250%;
     background-position: center top;  /* adjust focal */
     background-repeat: no-repeat;
     background-color: #000;           /* fill bars */ }
 }
+
+/* ====================== ≤420px ===================== */
 @media (max-width: 420px) {
-  main { background-position: 50% 46%;
-   background-size: contain;         /* zoom-out */
-   background-size: 250%;
+  main, #projects { background-position: 50% 46%;
+    background-size: contain;         /* zoom-out */
+    background-size: 250%;
     background-position: center top;  /* adjust focal */
     background-repeat: no-repeat;
     background-color: #000;   }
+}
+
+/* ===================== ≥869px ====================== */
+/* Desktop ≥ 869px: ensure mobile menu can’t linger or capture clicks */
+@media (min-width: 869px) {
+  #mobile-menu {
+    display: none !important;
+    max-height: 0 !important;
+    opacity: 0 !important;
+    pointer-events: none !important;
+  }
 }
