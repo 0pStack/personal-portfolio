@@ -209,8 +209,10 @@ main {
   padding-top: calc(2rem + 72px);
   background-image: url("https://4kwallpapers.com/images/walls/thumbs_3t/22695.jpg");
   background-repeat: no-repeat;
-  background-position: 50% 22%;
-  background-size: cover;
+  background-position: center top;
+  background-size: 125%;
+  background-color: #000;
+
 }
 
 main #hero {
@@ -277,15 +279,60 @@ section#hero {
 section#about {
   position: relative;
   top: 0;
-  margin-top: 0;
+  margin-top: 2rem;
   padding: clamp(2rem, 5vw, 4rem) 1rem;
-  background: rgba(0,0,0,0.18); /* optional: semi-transparent bg to separate it */
+  background: rgba(0, 0, 0, 0.18); /* optional: semi-transparent bg to separate it */
   backdrop-filter: blur(4px);
   -webkit-backdrop-filter: blur(4px);
   z-index: 1;
+  text-shadow: 0 2px 12px rgba(0, 0, 0, 0.6);
+  letter-spacing: 0.1px;
+  font-size: clamp(1rem, 2.2vw, 1.25rem);
 }
 
-.about-cv li{
+/* === FLEX LAYOUT FOR ABOUT CARD === */
+.about-card {
+  display: flex;
+  align-items: center;     /* vertically centers image + text */
+  justify-content: flex-start;
+  gap: 2rem;               /* space between image and text */
+  flex-wrap: wrap;         /* allows responsive stacking */
+}
+
+/* === IMAGE === */
+.profile-pic {
+  border-radius: 50%;
+  max-width: 200px;
+  height: auto;
+  display: block;
+  flex-shrink: 0;
+  margin: 1rem auto 1rem 8rem;
+}
+
+/* === TEXT === */
+.about-card h2 {
+  font-size: clamp(2.2rem, 6vw, 4rem);
+  line-height: 1.1;
+  margin: 0 0 0.5rem;
+  float: none;
+}
+
+.about-card p {
+  color: var(--text-soft);
+  max-width: 65ch;
+  margin: 0;
+  line-height: 1.65;
+  font-weight: 400;
+  letter-spacing: 0.1px;
+  font-size: clamp(1rem, 2.2vw, 1.25rem);
+}
+
+.about-info{
+  margin-right: 8rem;
+}
+
+/* === OPTIONAL CV LIST (if used later) === */
+.about-cv li {
   list-style-type: none;
 }
 /* ========================== RESPONSIVE ========================== */
@@ -325,4 +372,57 @@ section#about {
     opacity: 0 !important;
     pointer-events: none !important;
   }
+}
+/* === RESPONSIVE (MOBILE STACK) === */
+@media (max-width: 768px) {
+  .about-card {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .profile-pic {
+    margin-bottom: 1rem;
+    margin: auto;
+  }
+
+  .about-info{
+    margin: auto;
+  }
+  section#about{
+    margin-top: -2.5rem;
+  }
+}
+/**/
+/* Zoom OUT background on smaller devices */
+@media (max-width: 1024px) {
+  main { background-position: 50% 28%;
+   background-size: contain;         /* zoom-out */
+   background-size: 50%;
+    background-position: center top;  /* adjust focal */
+    background-repeat: no-repeat;
+    background-color: #000;   }
+}
+@media (max-width: 768px) {
+  main { background-position: 50% 34%;
+   background-size: contain;         /* zoom-out */
+   background-size: 250%;
+    background-position: center top;  /* adjust focal */
+    background-repeat: no-repeat;
+    background-color: #000;   }
+}
+@media (max-width: 576px) {
+  main { background-position: 50% 20%;
+   background-size: contain;         /* zoom-out */
+   background-size: 250%;
+    background-position: center top;  /* adjust focal */
+    background-repeat: no-repeat;
+    background-color: #000;           /* fill bars */ }
+}
+@media (max-width: 420px) {
+  main { background-position: 50% 46%;
+   background-size: contain;         /* zoom-out */
+   background-size: 250%;
+    background-position: center top;  /* adjust focal */
+    background-repeat: no-repeat;
+    background-color: #000;   }
 }
