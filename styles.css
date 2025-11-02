@@ -334,6 +334,40 @@ section#about {
 /* === OPTIONAL CV LIST (if used later) === */
 .about-cv li {
   list-style-type: none;
+  color:var(--text-soft);
+  display: inline-block;
+  justify-content: space-evenly;
+  margin-bottom: 1rem;
+  font-size: 1.5rem;
+}
+
+.about-cv li a{
+  text-decoration: none;
+  color:var(--accent);
+}
+
+.about-cv li a:hover{
+  color:var(--text-strong)
+}
+
+.about-cv{
+  color:var(--text-soft);
+  margin-left: 2rem;
+  text-align: center;
+}
+
+.about-cv p {
+  font-size: 2rem;
+  text-align: center;
+  margin-top: 4rem;
+}
+
+ul i{
+  font-size: 1rem;
+}
+
+.about-cv h3{
+  font-size: 2rem;
 }
 /* ========================== RESPONSIVE ========================== */
 
@@ -361,6 +395,11 @@ section#about {
     left: 2rem;
     right: 2rem;
     width: auto;
+  }
+
+  .about-cv, .about-cv li{
+    text-align: center;
+    margin: auto;
   }
 }
 
@@ -397,10 +436,13 @@ section#about {
 @media (max-width: 1024px) {
   main { background-position: 50% 28%;
    background-size: contain;         /* zoom-out */
-   background-size: 50%;
+   background-size: 160%;
     background-position: center top;  /* adjust focal */
     background-repeat: no-repeat;
-    background-color: #000;   }
+    background-color: #000; }
+    .profile-pic{
+      margin: auto;
+    }
 }
 @media (max-width: 768px) {
   main { background-position: 50% 34%;
