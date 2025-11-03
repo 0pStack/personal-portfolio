@@ -700,6 +700,77 @@ option{
 }
 
 /* ========================== FORM END ========================== */
+
+/* ========================== FOOTER ========================== */
+footer {
+  background-color: #0d0d0d; /* nearly black */
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  text-align: center;
+  padding: 1.5rem 1rem;
+  color: var(--text-soft);
+  font-size: 0.95rem;
+  letter-spacing: 0.2px;
+}
+
+footer .brand {
+  color: var(--accent);
+  font-weight: 600;
+}
+
+footer p {
+  margin: 0;
+  opacity: 0.9;
+}
+
+/* optional fade at top of footer (subtle visual break) */
+footer::before {
+  content: "";
+  display: block;
+  height: 1px;
+  width: 100%;
+  background: linear-gradient(to right, transparent, rgba(255,255,255,0.1), transparent);
+  margin-bottom: 1rem;
+}
+/* ========================== FOOTER END ========================== */
+
+.contact-info {
+  width: min(900px, 92vw);
+  margin: 3rem auto 2rem;          /* breathing space above & below */
+  text-align: center;
+  color: var(--text-soft);
+  background: rgba(0, 0, 0, 0.35); /* glass-like semi-transparent tone */
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 16px;
+  padding: 1.5rem 1rem;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+}
+
+.contact-info h3 {
+  margin-top: 0;
+  margin-bottom: 0.75rem;
+  font-weight: 700;
+  color: var(--text-strong);
+  text-shadow: 0 2px 6px rgba(0, 0, 0, 0.4);
+}
+
+.contact-info p {
+  margin: 0.4rem 0;
+  line-height: 1.6;
+  font-size: 1rem;
+}
+
+.contact-info a {
+  color: var(--accent);
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.contact-info a:hover {
+  color: var(--accent-2);
+  text-decoration: underline;
+}
 /* ========================== RESPONSIVE ========================== */
 
 /* ===================== ≤1024px ===================== */
