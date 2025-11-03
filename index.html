@@ -155,18 +155,81 @@
         </div>
       </section>
     </main>
-    <div id="form">
-      <div class="form-card">
-        <form action="post" action="contact.php">
-          <fieldset>
-            <label for="first-name">Namn: <input id="first-name" type="text" name="first-name" required></label>
-            <label for="email">Epost: <input id="email" type="email" name="email" required></label>
-            <textarea id="message" class="input-textarea" name="comment" placeholder="Meddelande..." minlength="8" rows="5" cols="24" required></textarea>
-          </fieldset>
-          <input type="submit" name="send" id="submit" value="Skicka">
-        </form>
-      </div>
-    </div>
+    <!-- ======== CONTACT ======== -->
+<section id="contact" class="contact-section">
+  <div class="contact-card">
+    <header class="contact-head">
+      <h2 id="contact-title">CONTACT</h2>
+      <p id="contact-help">Fill out this form, and we will reply as soon as possible.</p>
+    </header>
+
+    <form id="contact-form" method="post" action="contact.php" aria-describedby="contact-help" novalidate>
+      <fieldset class="form-grid" aria-describedby="req-note">
+        <legend class="sr-only">Personal information and message</legend>
+
+        <p id="req-note" class="vis-note">Fields are marked with * that are required</p>
+
+        <div class="form-field">
+          <label for="name">Name <span aria-hidden="true">*</span></label>
+          <input id="name" name="name" type="text" autocomplete="name" placeholder="Your name" required>
+          <span class="err" id="err-name" hidden></span>
+        </div>
+
+        <div class="form-field">
+          <label for="email">E-mail <span aria-hidden="true">*</span></label>
+          <input id="email" name="email" type="email" autocomplete="email" placeholder="your.email@exampel.com" required>
+          <span class="err" id="err-email" hidden></span>
+        </div>
+
+        <div class="form-field">
+          <label for="website">Website</label>
+          <input id="website" name="website" type="url" autocomplete="url" placeholder="https://yourwebsite.com">
+          <span class="err" id="err-website" hidden></span>
+        </div>
+
+        <div class="form-field">
+          <label for="phone">Phone number <span aria-hidden="true">*</span></label>
+          <input id="phone" name="phone" type="tel" inputmode="tel" autocomplete="phone" placeholder="+46 70 123 45 67" required>
+          <span class="err" id="err-phone" hidden></span>
+        </div>
+
+        <div class="form-field span-2">
+          <label for="subject">Subject <span aria-hidden="true">*</span></label>
+          <select id="subject" name="subject" autocomplete="off" required>
+            <option value="" selected disabled>Choose a subject</option>
+            <option>Projects</option>
+            <option>Enquiry</option>
+            <option>General</option>
+            <option>Other</option>
+          </select>
+          <span class="err" id="err-subject" hidden></span>
+        </div>
+
+        <div class="form-field span-2">
+          <label for="message">Message <span aria-hidden="true">*</span></label>
+          <textarea id="message" name="message" rows="6" minlength="8" placeholder="Describe your message here..." required></textarea>
+          <span class="err" id="err-message" hidden></span>
+        </div>
+
+        <div class="form-consent span-2">
+          <label class="checkbox">
+            <input type="checkbox" id="gdpr" name="gdpr" required>
+            <span>Accept GDPR terms *</span>
+          </label>
+          <span class="err" id="err-gdpr" hidden></span>
+        </div>
+
+        <div class="form-actions span-2">
+          <button id="send-btn" type="submit" aria-describedby="submit-help">Send message</button>
+          <span id="submit-help" class="vis-note">Please accept GDPR terms before you send.</span>
+        </div>
+
+        <!-- Live region for validation summaries -->
+        <div class="vis-note" aria-live="polite" aria-atomic="true" id="form-status"></div>
+      </fieldset>
+    </form>
+  </div>
+</section>
     <script src="script.js"></script>
   </body>
 </html>
