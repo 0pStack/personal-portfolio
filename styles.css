@@ -485,6 +485,56 @@ section#projects {
   }
 }
 /*=========================== PROJECTS END ============================*/
+/* ========================== FORM ========================== */
+
+form {
+  width: 60vw;
+  max-width: 500px;
+  min-width: 300px;
+  margin: 0 auto;
+}
+
+fieldset {
+  border: none;
+  padding: 2rem 0;
+  border-bottom: 3px solid var(--accent);
+}
+
+label {
+  display: block;
+  margin: 0.5rem 0;
+}
+
+label, textarea, input {
+  width: 80%;
+  margin: 5px;
+  margin-bottom: 0;
+  margin-left: 0;
+  margin-right: 0;
+}
+
+input[type="submit"] {
+  display: block;
+  width: 60%;
+  margin: 0 auto;
+  height: 2em;
+  font-size: 1.1rem;
+  background-color: var(--text-soft);
+  border-color: var(--accent);
+  margin-top: 1em;
+  margin-bottom: 1em;
+  margin-left: auto;
+  margin-right: auto;
+  min-width: 300px;
+}
+
+textarea{
+  resize: none;
+}
+
+
+
+/* ========================== FORM END ========================== */
 /* ========================== RESPONSIVE ========================== */
 
 /* ===================== ≤1024px ===================== */
@@ -589,7 +639,7 @@ section#projects {
   }
 }
 
-/* ---- STABILITY PATCH B: emulate glass without blur in projects ---- */
+/* ---- STABILITY PATCH A: emulate glass without blur in projects ---- */
 #projects .project-card,
 #projects .project-card1,
 #projects .project-card2,

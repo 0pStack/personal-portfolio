@@ -1,81 +1,94 @@
 <!DOCTYPE html>
 <html lang="sv">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Workshop</title>
 
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Workshop</title>
+    <!-- Styles -->
+    <link rel="stylesheet" href="styles.css" />
 
-  <!-- Styles -->
-  <link rel="stylesheet" href="styles.css" />
+    <!-- Icons -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+      integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+  </head>
 
-  <!-- Icons -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
-    integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
-    crossorigin="anonymous" referrerpolicy="no-referrer" />
-</head>
+  <body>
+    <header>
+      <div class="navbar">
+        <nav aria-label="Primary">
+          <div class="logo">
+            <a href="index.html" aria-label="0pFlow home">0pFlow</a>
+          </div>
 
-<body>
-  <header>
-    <div class="navbar">
-      <nav aria-label="Primary">
-        <div class="logo">
-          <a href="index.html" aria-label="0pFlow home">0pFlow</a>
-        </div>
+          <ul class="links">
+            <li><a href="#">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#">Services</a></li>
+            <li><a href="#projects">Portfolio</a></li>
+            <li><a href="#">Contact</a></li>
+          </ul>
 
-        <ul class="links">
+          <a href="#" class="action-btn">Let's talk</a>
+
+          <button
+            class="toggle-btn"
+            type="button"
+            aria-expanded="false"
+            aria-controls="mobile-menu"
+          >
+            <i class="fa-solid fa-bars" aria-hidden="true"></i>
+            <span class="sr-only">Open menu</span>
+          </button>
+        </nav>
+      </div>
+
+      <!-- Mobile dropdown -->
+      <div id="mobile-menu" class="dropdown-menu" aria-hidden="true">
+        <ul>
           <li><a href="#">Home</a></li>
           <li><a href="#about">About</a></li>
           <li><a href="#">Services</a></li>
           <li><a href="#projects">Portfolio</a></li>
           <li><a href="#">Contact</a></li>
+          <li><a href="#" class="action-btn">Let's talk</a></li>
         </ul>
-
-        <a href="#" class="action-btn">Let's talk</a>
-
-        <button class="toggle-btn" type="button" aria-expanded="false" aria-controls="mobile-menu">
-          <i class="fa-solid fa-bars" aria-hidden="true"></i>
-          <span class="sr-only">Open menu</span>
-        </button>
-      </nav>
-    </div>
-
-    <!-- Mobile dropdown -->
-    <div id="mobile-menu" class="dropdown-menu" aria-hidden="true">
-      <ul>
-        <li><a href="#">Home</a></li>
-        <li><a href="#about">About</a></li>
-        <li><a href="#">Services</a></li>
-        <li><a href="#projects">Portfolio</a></li>
-        <li><a href="#">Contact</a></li>
-        <li><a href="#" class="action-btn">Let's talk</a></li>
-      </ul>
-    </div>
-  </header>
-
-  <main>
-    <section id="hero">
-      <div class="hero-card">
-        <h1>Welcome</h1>
-        <p>
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Debitis,
-          libero, voluptatem ipsam facere placeat dolorum recusandae hic
-          doloremque, in explicabo eaque? Delectus quidem dolorem vel esse
-          iste rerum itaque doloribus!
-        </p>
       </div>
-    </section>
+    </header>
 
-    <section id="about">
-  <div class="about-card">
-    <img class="profile-pic" src="/img/download.png" alt="Profile picture of Ruslan" aria-label="Profile picture of Ruslan">
-    <div class="about-info">
-      <h2>Ruslan Galiyev</h2>
-      <p>Aspiring Blockchain developer</p>
-    </div>
-  </div>
-</section>
-    <aside class="about-cv">
+    <main>
+      <section id="hero">
+        <div class="hero-card">
+          <h1>Welcome</h1>
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Debitis,
+            libero, voluptatem ipsam facere placeat dolorum recusandae hic
+            doloremque, in explicabo eaque? Delectus quidem dolorem vel esse
+            iste rerum itaque doloribus!
+          </p>
+        </div>
+      </section>
+
+      <section id="about">
+        <div class="about-card">
+          <img
+            class="profile-pic"
+            src="/img/download.png"
+            alt="Profile picture of Ruslan"
+            aria-label="Profile picture of Ruslan"
+          />
+          <div class="about-info">
+            <h2>Ruslan Galiyev</h2>
+            <p>Aspiring Blockchain developer</p>
+          </div>
+        </div>
+      </section>
+      <aside class="about-cv">
         <h3>Accomplishments</h3>
         <ul>
           <li>Web3 Litepaper</li>
@@ -86,49 +99,74 @@
           <i class="fa-solid fa-star-of-life"></i>
           <li>Python</li>
           <i class="fa-solid fa-star-of-life"></i>
-          <li>Extended CV – <a href="/cv/cv.html" aria-label="View my extended CV" target="_blank"> Click here</a></li>
+          <li>
+            Extended CV –
+            <a
+              href="/cv/cv.html"
+              aria-label="View my extended CV"
+              target="_blank"
+            >
+              Click here</a
+            >
+          </li>
         </ul>
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Explicabo reiciendis maiores commodi autem laboriosam excepturi aperiam obcaecati cum dolores laudantium? Dignissimos harum laudantium ipsum placeat repellat asperiores reiciendis praesentium quas?</p>
+        <p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Explicabo
+          reiciendis maiores commodi autem laboriosam excepturi aperiam
+          obcaecati cum dolores laudantium? Dignissimos harum laudantium ipsum
+          placeat repellat asperiores reiciendis praesentium quas?
+        </p>
       </aside>
 
-    <section id="projects" class="projects-container">
-  <div class="project-card">
-    <h4>My projects</h4>
+      <section id="projects" class="projects-container">
+        <div class="project-card">
+          <h4>My projects</h4>
 
-    <p class="intro">
-      Lorem ipsum dolor sit amet, consectetur adipisicing elit. Debitis, libero,
-      voluptatem ipsam facere placeat dolorum recusandae hic doloremque, in
-      explicabo eaque? Delectus quidem dolorem vel esse iste rerum itaque doloribus!
-    </p>
+          <p class="intro">
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Debitis,
+            libero, voluptatem ipsam facere placeat dolorum recusandae hic
+            doloremque, in explicabo eaque? Delectus quidem dolorem vel esse
+            iste rerum itaque doloribus!
+          </p>
 
-    <div class="project-card1">
-      <div class="thumb">
-        <img src="/img/calculator.png" alt="Calculator app screenshot">
+          <div class="project-card1">
+            <div class="thumb">
+              <img src="/img/calculator.png" alt="Calculator app screenshot" />
+            </div>
+            <h5>Calculator app</h5>
+            <p>Simple four-function calculator.</p>
+          </div>
+
+          <div class="project-card2">
+            <div class="thumb">
+              <img src="/img/project-2.png" alt="Project two preview" />
+            </div>
+            <h5>Project two</h5>
+            <p>Short description.</p>
+          </div>
+
+          <div class="project-card3">
+            <div class="thumb">
+              <img src="/img/project-3.png" alt="Project three preview" />
+            </div>
+            <h5>Project three</h5>
+            <p>Short description.</p>
+          </div>
+        </div>
+      </section>
+    </main>
+    <div id="form">
+      <div class="form-card">
+        <form action="post" action="contact.php">
+          <fieldset>
+            <label for="first-name">Namn: <input id="first-name" type="text" name="first-name" required></label>
+            <label for="email">Epost: <input id="email" type="email" name="email" required></label>
+            <textarea id="message" class="input-textarea" name="comment" placeholder="Meddelande..." minlength="8" rows="5" cols="24" required></textarea>
+          </fieldset>
+          <input type="submit" name="send" id="submit" value="Skicka">
+        </form>
       </div>
-      <h5>Calculator app</h5>
-      <p>Simple four-function calculator.</p>
     </div>
-
-    <div class="project-card2">
-      <div class="thumb">
-        <img src="/img/project-2.png" alt="Project two preview">
-      </div>
-      <h5>Project two</h5>
-      <p>Short description.</p>
-    </div>
-
-    <div class="project-card3">
-      <div class="thumb">
-        <img src="/img/project-3.png" alt="Project three preview">
-      </div>
-      <h5>Project three</h5>
-      <p>Short description.</p>
-    </div>
-  </div>
-</section>
-  </main>
-
-  <script src="script.js"></script>
-</body>
-
+    <script src="script.js"></script>
+  </body>
 </html>
