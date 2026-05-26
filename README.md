@@ -1,5 +1,12 @@
 # Personal Portfolio
 
+![HTML5](https://img.shields.io/badge/-HTML5-E34F26?logo=html5&logoColor=white)
+![CSS3](https://img.shields.io/badge/-CSS3-1572B6?logo=css3&logoColor=white)
+![JavaScript](https://img.shields.io/badge/-JavaScript-F7DF1E?logo=javascript&logoColor=black)
+[![Stars](https://img.shields.io/github/stars/0pFlow/personal-portfolio?style=flat)](https://github.com/0pFlow/personal-portfolio/stargazers)
+[![Last Commit](https://img.shields.io/github/last-commit/0pFlow/personal-portfolio)](https://github.com/0pFlow/personal-portfolio/commits/main)
+![License](https://img.shields.io/badge/license-MIT-blue.svg)
+
 A personal portfolio and CV website built with plain HTML, CSS, and JavaScript. Showcases an "About Me" section, project highlights, a contact form, and a dedicated CV page.
 
 ## Features
