@@ -3,8 +3,8 @@
 ![HTML5](https://img.shields.io/badge/-HTML5-E34F26?logo=html5&logoColor=white)
 ![CSS3](https://img.shields.io/badge/-CSS3-1572B6?logo=css3&logoColor=white)
 ![JavaScript](https://img.shields.io/badge/-JavaScript-F7DF1E?logo=javascript&logoColor=black)
-[![Stars](https://img.shields.io/github/stars/0pFlow/personal-portfolio?style=flat)](https://github.com/0pFlow/personal-portfolio/stargazers)
-[![Last Commit](https://img.shields.io/github/last-commit/0pFlow/personal-portfolio)](https://github.com/0pFlow/personal-portfolio/commits/main)
+[![Stars](https://img.shields.io/github/stars/0pStack/personal-portfolio?style=flat)](https://github.com/0pStack/personal-portfolio/stargazers)
+[![Last Commit](https://img.shields.io/github/last-commit/0pStack/personal-portfolio)](https://github.com/0pStack/personal-portfolio/commits/main)
 ![License](https://img.shields.io/badge/license-MIT-blue.svg)
 
 A personal portfolio and CV website built with plain HTML, CSS, and JavaScript. Showcases an "About Me" section, project highlights, a contact form, and a dedicated CV page.
@@ -48,7 +48,7 @@ No build step or dependencies are required.
 Clone the repo and open `index.html` directly in your browser:
 
 ```bash
-git clone https://github.com/0pFlow/personal-portfolio.git
+git clone https://github.com/0pStack/personal-portfolio.git
 cd personal-portfolio
 ```
 
@@ -68,7 +68,7 @@ Open `http://localhost:8000` (or the port your server reports) in your browser.
 
 If GitHub Pages is enabled for this repository, the site is served from the root and is reachable at:
 
-`https://0pFlow.github.io/personal-portfolio/`
+`https://0pStack.github.io/personal-portfolio/`
 
 ## Screenshots
 
@@ -81,4 +81,4 @@ If GitHub Pages is enabled for this repository, the site is served from the root
 
 ## Author
 
-**Ruslan Galiyev** — [@0pFlow](https://github.com/0pFlow)
+**Ruslan Galiyev** — [@0pStack](https://github.com/0pStack)
